@@ -4,7 +4,7 @@
 #include <vector>
 #include <stdexcept>
 
-// ========== Шаблонный логгер ==========
+//Шаблонный логгер
 template<typename T>
 class Logger {
 public:
@@ -16,7 +16,7 @@ public:
     }
 };
 
-// ========== Класс Inventory ==========
+//Класс Inventory
 class Inventory {
 private:
     std::vector<std::string> items;
@@ -56,7 +56,7 @@ public:
     }
 };
 
-// ========== Класс Character ==========
+//Класс Character
 class Character {
 private:
     std::string name;
@@ -138,7 +138,7 @@ public:
     std::string getName() const { return name; }
 };
 
-// ========== Класс Monster ==========
+//Класс Monster
 class Monster {
 protected:
     std::string name;
@@ -180,7 +180,7 @@ void Character::attackEnemy(Monster& enemy) {
     Logger<std::string>::log(name + " attacks " + enemy.getName() + " for " + std::to_string(damage));
 }
 
-// ========== Разные типы монстров ==========
+//Разные типы монстров
 class Goblin : public Monster {
 public:
     Goblin() : Monster("Goblin", 30, 10, 2) {}
@@ -196,7 +196,7 @@ public:
     Skeleton() : Monster("Skeleton", 40, 15, 3) {}
 };
 
-// ========== Класс Game ==========
+//Класс Game
 class Game {
 private:
     Character player;
@@ -266,7 +266,7 @@ public:
     }
 };
 
-// ========== main ==========
+//main
 int main() {
     Game game;
     game.start();
